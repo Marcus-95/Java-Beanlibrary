@@ -1,0 +1,76 @@
+body{
+    background-color: #FAEBD7;
+    background: linear-gradient(0deg, rgba(242,244,247,1) 0%, rgba(244,215,137,1) 44%, rgba(208,193,91,1) 92%);
+    width: 60%;
+    margin: auto;  
+}
+.add{ 
+    align-self: center;
+    font-size: 30px;
+    font-family: sans-serif;
+    font-weight: bold; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    
+    flex:1;   
+}
+.addfind{
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.button{
+    background-color: 	burlywood;
+    flex:1;
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: bold; 
+    width:400px;
+    height: 75px;
+    margin: 10px;
+    align-self: center;
+    display: flex;
+    text-align: center;
+    
+}
+.count{
+    font-size: 50px;
+    font-family: sans-serif;
+    font-weight: bold; 
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+    background-color: burlywood;
+}
+.bodycontainer{
+    background-color: papayawhip;
+}
+.findtext{
+    font-size: 30px;
+    font-family: sans-serif;
+    font-weight: bold; 
+    margin:20px;  
+    display: flex;
+    flex:1;
+    
+    
+    
+}
+.container{
+    display: flex;  
+    width: 70%;
+    margin: auto; 
+    background-color: moccasin;
+    text-align: center;
+}
+.header{
+    text-align: center;
+    font-size: 50px;
+    background-color: lightyellow;
+  
+    
+}
+

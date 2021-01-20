@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <h:outputStylesheet library="css" name="style.css"/>
+        <title>Library</title>
+    </h:head>
+
+
+    <h:body>
+
+        <div class="bodycontainer">
+            <h:form>
+                <h3 class="header">Welcome to the library!</h3>
+                <h:panelGrid class="container"  columns="2">
+                    
+                    
+                    <h:outputLabel class="findtext" value = "Book title:"/>
+                    <h:inputText class="add" value="#{bookController.title}"/>
+
+                    <h:outputLabel class="findtext" value = "Book author:"/>
+                    <h:inputText class="add" value="#{bookController.author}"/>
+
+                    <h:message class="add" for="number" />
+                    <h:commandButton class="button" value="Submit book to library" action="#{bookController.submit}"/>
+
+                </h:panelGrid>
+
+                <div class="container">
+
+                    <h:outputLabel class="findtext" value = "Find/edit your author: "/>
+                    <h:inputText class="add" value="#{bookController.searchAuthor}"/>
+
+                    <h:commandButton class="button" value="searchAuthor" action="#{bookController.searchAuthor1}" />
+
+                </div>
+
+                <div class="container">
+                    <h:outputLabel class="findtext" value = "Find/edit the title:  "/>
+                    <h:inputText class="add" value="#{bookController.searchTitle}"/>
+
+                    <h:commandButton class="button" value="searchTitle" action="#{bookController.searchTitle1}" />
+
+                </div>
+
+                <div class="container">
+                    <h:commandButton class="button" value="Show all books in library" action="#{bookController.fillBooks}" />
+                </div>
+
+                <p:dataTable value="#{bookController.allBooks}" var="b">
+                    <p:column headerText="Id">#{b.id}</p:column>
+                    <p:column headerText="Title">#{b.title}</p:column>
+                    <p:column headerText="Author">#{b.author}</p:column>    
+
+                    <!--DELETES BY OBJECT ID-->
+                    <p:column>                   
+                        <p:commandButton
+                            value="DELETE"                      
+                            action="#{bookController.delete(b.id)}"
+                            ajax="false"/>
+                    </p:column>
+
+                    
+                    <!--UPDATES BY OBJECT ID-->
+                    <!--POINTS AT SEARCHTITLE OR SEARCHAUTHOR STORED VARIABLES-->
+                    <p:column>
+                        <p:commandButton
+                            value="UPDATE"                 
+                            action="#{bookController.update(b.id)}"
+                            ajax="false"/>
+                    </p:column>
+
+                </p:dataTable>
+                
+                <p class="count">Book count: #{bookController.count} </p>
+
+            </h:form>
+           
+        </div>
+    </h:body>   
+</html>
+
